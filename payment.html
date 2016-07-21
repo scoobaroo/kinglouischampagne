@@ -1,12 +1,22 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
+<div class = "container">
 <link href="css/stylish-portfolio.css" rel="stylesheet">
 <form id="checkout" method="post" action="/checkout">
-  <div id="payment-form"></div>
-  <input type="submit" value="Pay" class="button btn-success">
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="amount">Payment Form</label>
+    <div class="col-md-4">
+      <input id="amount" name="amount" type="text" placeholder="Amount" class="form-control input-md">
+      <div id="payment-form"></div>
+      <input type="submit" value="Pay" class="button btn-success">
+      <br>
+      <a href='/'> Back To Portfolio </a>
+    </div>
+  </div>
 </form>
-<a href='/'> Back To Portfolio </a>
+<br>
+
 <script src="https://js.braintreegateway.com/js/braintree-2.24.1.min.js"></script>
 <script>
 // We generated a client token for you so you can test out this code
@@ -18,3 +28,4 @@ braintree.setup(clientToken, "dropin", {
   container: "payment-form"
 });
 </script>
+</div>
